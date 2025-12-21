@@ -1,17 +1,22 @@
+#ifndef BIBLIOTHEQUE_H
+#define BIBLIOTHEQUE_H
+
 #include <string>
 #include "livre.h"
 using namespace std;
 
-class Bibliothèque
+class Bibliotheque
 {
 private:
 	string nom;
 	string adresse;
 	int code;
-	Livre* liste_livres;
+	Livre** liste_livres;
+	int nb_livres;
+	int capacite_livres;
 public:
-	Bibliothèque(string,string,int);
-	virtual ~Bibliothèque();
+	Bibliotheque(string,string,int);
+	virtual ~Bibliotheque();
 
 	void set_nom(string);
 	string get_nom();
@@ -20,5 +25,11 @@ public:
 	void set_code(int);
 	int get_code();
 
+
+	void ajouter_livre(Livre*);
+	void afficher_livres();
+
 };
+
+#endif
 

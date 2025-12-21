@@ -1,8 +1,11 @@
+#ifndef LIVRE_H
+#define LIVRE_H
+
 #include <string>
 using namespace std;
-class Livre
-{
-private:
+class Livre {
+protected:
+	static int compteur;
 	int code;
 	string auteur;
 	string titre;
@@ -10,9 +13,10 @@ private:
 	string ISBN;
 	int type_lecteur;
 	int etat;
+
 public:
-	Livre(int);
-	Livre(int, string, string, string, string, int, int);
+	Livre();
+	Livre(string, string, string, string, int, int);
 	virtual ~Livre();
 
 	void set_code(int);
@@ -30,9 +34,11 @@ public:
 	void set_etat(int);
 	int get_etat();
 
-	void affiche();
+	virtual void affiche() = 0;
 
 
 
 };
+
+#endif 
 

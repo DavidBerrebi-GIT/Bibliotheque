@@ -80,5 +80,31 @@ void Bibliotheque::afficher_categorie(string categorie) {
 			cout << "------------------------" << endl;
 		}
 	}
+}
+
+bool Bibliotheque::possede_livre(int code) {
+	for (int i = 0; i < nb_livres; i++) {
+		if (liste_livres[i]->get_code() == code) {
+			return true;
+		}
+	}
+	return false;
+}
+void Bibliotheque::supprimer_livre(int code) {
+	if (!possede_livre(code)) {
+		return;
+	}
+	Livre** nouvelle_liste = new Livre * [nb_livres - 1];
+	int j = 0;
+	for (int i = 0; i < nb_livres; i++) {
+		if (liste_livres[i]->get_code() != code) {
+			nouvelle_liste[j] = liste_livres[i];
+			j++;
+		}
+	}
+	delete[] liste_livres;
+	liste_livres = nouvelle_liste;
+}
+void Bibliotheque::emprunter_livre(Bibliotheque autre, int code_livre) {
 
 }

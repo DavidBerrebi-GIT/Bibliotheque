@@ -29,6 +29,10 @@ public:
 	void ajouter_livre(Livre*);
 	void afficher_livres();
 	void afficher_categorie(string);
+
+	bool possede_livre(int);
+	void supprimer_livre(int);
+	void emprunter_livre(Bibliotheque, int);
 };
 
 #endif

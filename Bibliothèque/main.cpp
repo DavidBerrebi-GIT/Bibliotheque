@@ -23,5 +23,8 @@ int main()
 	biblio.ajouter_livre(&album1);
 	biblio.afficher_livres();
 	biblio.afficher_categorie("Roman");
+
+	biblio.supprimer_livre(roman1.get_code());
+	biblio.afficher_livres();
 }
 

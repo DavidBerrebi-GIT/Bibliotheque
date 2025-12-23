@@ -22,5 +22,6 @@ int main()
 	biblio.ajouter_livre(&theatre1);
 	biblio.ajouter_livre(&album1);
 	biblio.afficher_livres();
+	biblio.afficher_categorie("Roman");
 }
 

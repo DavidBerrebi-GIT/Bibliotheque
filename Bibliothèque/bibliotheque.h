@@ -28,7 +28,7 @@ public:
 
 	void ajouter_livre(Livre*);
 	void afficher_livres();
-
+	void afficher_categorie(string);
 };
 
 #endif

@@ -61,3 +61,24 @@ void Bibliotheque::afficher_livres() {
 		cout << "------------------------" << endl;
 	}
 }
+void Bibliotheque::afficher_categorie(string categorie) {
+	int compteur = 0;
+	for (int i = 0; i < nb_livres; i++) {
+		if (liste_livres[i]->get_categorie() == categorie){
+			compteur++;
+		}
+	}
+	if (compteur == 0) {
+		cout << "Aucun livre de la catégorie '"<<categorie<< "' dans la bibliotheque." << endl;
+		return;
+	}
+	cout << "Nombre de livres de la catégorie '"<<categorie<<"' dans la bibliotheque : " << compteur << " / " << capacite_livres << endl;
+	cout << "Liste des livres:" << endl;
+	for (int i = 0; i < nb_livres; i++) {
+		if (liste_livres[i]->get_categorie() == categorie) {
+			liste_livres[i]->affiche();
+			cout << "------------------------" << endl;
+		}
+	}
+
+}

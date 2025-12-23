@@ -12,6 +12,7 @@ Livre::Livre() {
 	type_lecteur = 0;
 	etat = 0;
 	compteur++;
+	categorie = "Livre";
 
 }
 Livre::Livre(string auteur, string titre, string editeur, string ISBN, int type_lecteur, int etat) {
@@ -22,6 +23,7 @@ Livre::Livre(string auteur, string titre, string editeur, string ISBN, int type_
 	this->ISBN = ISBN;
 	this->type_lecteur = type_lecteur;
 	this->etat = etat;
+	this->categorie = "Livre";
 	compteur++;
 }
 Livre::~Livre() {
@@ -70,7 +72,12 @@ void Livre::set_etat(int etat) {
 int Livre::get_etat(){
 	return etat;
 }
-
+void Livre::set_categorie(string categorie) {
+	this->categorie = categorie;
+}
+string Livre::get_categorie() {
+	return categorie;
+}
 
 
 void Livre::affiche() {

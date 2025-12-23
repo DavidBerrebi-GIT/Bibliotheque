@@ -13,6 +13,7 @@ protected:
 	string ISBN;
 	int type_lecteur;
 	int etat;
+	string categorie;
 
 public:
 	Livre();
@@ -33,6 +34,8 @@ public:
 	int get_type_lecteur();
 	void set_etat(int);
 	int get_etat();
+	void set_categorie(string);
+	string get_categorie();
 
 	virtual void affiche() = 0;
 

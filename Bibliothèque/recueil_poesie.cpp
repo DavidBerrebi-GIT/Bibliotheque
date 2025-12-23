@@ -4,11 +4,15 @@
 Recueil_poesie::Recueil_poesie() : Livre() {
 	vers = false;
 	prose = false;
+	categorie = "Recueil de poesie";
+
 }
 Recueil_poesie::Recueil_poesie(string auteur, string titre, string editeur, string ISBN, int type_lecteur, int etat, bool vers, bool prose)
 	: Livre(auteur, titre, editeur, ISBN, type_lecteur, etat) {
 	this->vers = vers;
 	this->prose = prose;
+	categorie = "Recueil de poesie";
+
 }
 Recueil_poesie::~Recueil_poesie() {
 	compteur--;

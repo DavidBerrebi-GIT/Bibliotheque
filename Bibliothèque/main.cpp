@@ -21,10 +21,30 @@ int main()
 	biblio.ajouter_livre(&recueil1); 
 	biblio.ajouter_livre(&theatre1);
 	biblio.ajouter_livre(&album1);
+
+	Bibliotheque  biblio2 = Bibliotheque("Bibliotheque Secondaire", "456 Rue Secondaire", 2);
+	BD bd2 = BD("AuteurBD2", "TitreBD2", "EditeurBD2", "ISBNBD2", 2, 1, "Dessinateur2");
+	Roman roman2 = Roman("AuteurRoman2", "TitreRoman2", "EditeurRoman2", "ISBNRoman2", 1, 1, "Genre2");
+
+	biblio2.ajouter_livre(&bd2);
+	biblio2.ajouter_livre(&roman2);
+
+	
+
+	cout << "Premier affichage :" << endl;
 	biblio.afficher_livres();
+	cout << "deuxieme affichage : romans:" << endl;
 	biblio.afficher_categorie("Roman");
 
 	biblio.supprimer_livre(roman1.get_code());
+	cout << "Troisième affichage :  apres suppression" << endl;
 	biblio.afficher_livres();
+	biblio.emprunter_livre(biblio2, bd2.get_code());
+	cout << "------------------------\n" << endl;
+	cout << "Quatrième affichage : Après emprunt du livre BD2 de la bibliotheque secondaire:" << endl;
+
+	biblio.afficher_livres();
+
+	
 }
 

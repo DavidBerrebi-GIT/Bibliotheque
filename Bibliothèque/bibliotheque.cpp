@@ -103,7 +103,8 @@ void Bibliotheque::supprimer_livre(int code) {
 		}
 	}
 	delete[] liste_livres;
-	liste_livres = nouvelle_liste;
+	nb_livres--;
+	this->liste_livres = nouvelle_liste;
 }
 void Bibliotheque::emprunter_livre(Bibliotheque autre, int code_livre) {
 	if (!autre.possede_livre(code_livre)) {

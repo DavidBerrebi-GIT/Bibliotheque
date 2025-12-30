@@ -33,6 +33,12 @@ void Bibliotheque::set_code(int code) {
 int Bibliotheque::get_code() {
 	return code;
 }
+int Bibliotheque::get_nblivres() {
+	return nb_livres;
+}
+int Bibliotheque::get_capacite_livres() {
+	return capacite_livres;
+}
 
 void Bibliotheque::ajouter_livre(Livre* livre) {
     if (nb_livres >= capacite_livres) {
@@ -60,6 +66,7 @@ void Bibliotheque::afficher_livres() {
 		liste_livres[i]->affiche();
 		cout << "------------------------" << endl;
 	}
+	cout << endl;
 }
 void Bibliotheque::afficher_categorie(string categorie) {
 	int compteur = 0;
@@ -94,7 +101,7 @@ void Bibliotheque::supprimer_livre(int code) {
 	if (!possede_livre(code)) {
 		return;
 	}
-	Livre** nouvelle_liste = new Livre * [nb_livres - 1];
+	Livre** nouvelle_liste = new Livre*[capacite_livres];
 	int j = 0;
 	for (int i = 0; i < nb_livres; i++) {
 		if (liste_livres[i]->get_code() != code) {
@@ -103,19 +110,17 @@ void Bibliotheque::supprimer_livre(int code) {
 		}
 	}
 	delete[] liste_livres;
-	nb_livres--;
+	
 	liste_livres = nouvelle_liste;
+	nb_livres = j;
 }
-void Bibliotheque::emprunter_livre(Bibliotheque autre, int code_livre) {
-	if (!autre.possede_livre(code_livre)) {
-		return;
-	}
+void Bibliotheque::emprunter_livre(Bibliotheque &autre, string ISBN) {
 	for (int i = 0; i < autre.nb_livres; i++) {
-		if (autre.liste_livres[i]->get_code() == code_livre) {
+		if (autre.liste_livres[i]->get_ISBN() == ISBN) {
 			Livre* livre_emprunte = autre.liste_livres[i];
 			livre_emprunte->set_etat(2);
 			ajouter_livre(livre_emprunte);
-			autre.supprimer_livre(code_livre);
+			autre.supprimer_livre(livre_emprunte->get_code());
 			return;
 		}
 	}

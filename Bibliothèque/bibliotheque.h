@@ -24,6 +24,8 @@ public:
 	string get_adresse();
 	void set_code(int);
 	int get_code();
+	int get_nblivres();
+	int get_capacite_livres();
 
 
 	void ajouter_livre(Livre*);
@@ -32,7 +34,7 @@ public:
 
 	bool possede_livre(int);
 	void supprimer_livre(int);
-	void emprunter_livre(Bibliotheque, int);
+	void emprunter_livre(Bibliotheque&,string);
 };
 
 #endif

@@ -35,6 +35,7 @@ public:
 	bool possede_livre(int);
 	void supprimer_livre(int);
 	void emprunter_livre(Bibliotheque&,string);
+	Livre* emprunt_adherant(int);
 };
 
 #endif

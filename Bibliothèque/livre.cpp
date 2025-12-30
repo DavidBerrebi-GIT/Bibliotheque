@@ -90,4 +90,12 @@ void Livre::affiche() {
 	cout << "Etat: " << etat << endl;
 
 }
-
+bool Livre::est_disponible() {
+	return etat == 0 or etat == 2;
+}
+void Livre::emprunte() {
+	etat = etat + 1;
+}
+void Livre::retourne() {
+	etat = etat - 1;
+}

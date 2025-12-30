@@ -38,8 +38,10 @@ public:
 	string get_categorie();
 
 	virtual void affiche() = 0;
+	bool est_disponible();
 
-
+	void emprunte();
+	void retourne();
 
 };
 

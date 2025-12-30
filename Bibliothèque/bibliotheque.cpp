@@ -125,3 +125,14 @@ void Bibliotheque::emprunter_livre(Bibliotheque &autre, string ISBN) {
 		}
 	}
 }
+Livre* Bibliotheque::emprunt_adherant(int code) {
+	for (int i = 0; i < nb_livres; i++) {
+		if (liste_livres[i]->get_code() == code && liste_livres[i]->est_disponible() ) {
+			Livre* livre_emprunte = liste_livres[i];
+			livre_emprunte->emprunte();
+			return livre_emprunte;
+		}
+	}
+	return nullptr;
+}
+

@@ -2,27 +2,24 @@
 
 #include <iostream>
 Roman::Roman() : Livre() {
-	genre = "";
-	categorie = "Roman";
-
+  genre = "";
+  categorie = "Roman";
 }
-Roman::Roman(string auteur, string titre, string editeur, string ISBN, int type_lecteur, int etat, string genre)
-	: Livre(auteur, titre, editeur, ISBN, type_lecteur, etat) {
-	this->genre = genre;
-	categorie = "Roman";
-
+Roman::Roman(string auteur, string titre, string editeur, string ISBN, int type_lecteur, string genre)
+    : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
+  this->genre = genre;
+  categorie = "Roman";
 }
 Roman::~Roman() {
-	compteur--;
+  compteur--;
 }
 void Roman::set_genre(string genre) {
-	this->genre = genre;
+  this->genre = genre;
 }
 string Roman::get_genre() {
-	return genre;
+  return genre;
 }
 void Roman::affiche() {
-	Livre::affiche();
-	std::cout << "Genre: " << genre << std::endl;
+  Livre::affiche();
+  std::cout << "Genre: " << genre << std::endl;
 }
-

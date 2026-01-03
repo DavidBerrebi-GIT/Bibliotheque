@@ -1,29 +1,26 @@
 #include "bd.h"
+
 #include <iostream>
 
 BD::BD() : Livre() {
-	dessinateur = "";
-	categorie = "BD";
+  dessinateur = "";
+  categorie = "BD";
 }
-BD::BD(string auteur, string titre, string editeur, string ISBN, int type_lecteur, int etat, string dessinateur) 
-	: Livre(auteur, titre, editeur, ISBN, type_lecteur, etat) {
-	this->dessinateur = dessinateur;
-	categorie = "BD";
+BD::BD(string auteur, string titre, string editeur, string ISBN, int type_lecteur, string dessinateur)
+    : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
+  this->dessinateur = dessinateur;
+  categorie = "BD";
 }
 BD::~BD() {
-	compteur--;
+  compteur--;
 }
 void BD::set_dessinateur(string dessinateur) {
-	this->dessinateur = dessinateur;
+  this->dessinateur = dessinateur;
 }
 string BD::get_dessinateur() {
-	return dessinateur;
+  return dessinateur;
 }
 void BD::affiche() {
-	Livre::affiche();
-	cout << "Dessinateur: " << dessinateur << endl;
+  Livre::affiche();
+  cout << "Dessinateur: " << dessinateur << endl;
 }
-
-
-
-

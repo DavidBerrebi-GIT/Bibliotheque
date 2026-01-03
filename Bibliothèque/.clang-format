@@ -1,0 +1,6 @@
+BasedOnStyle: Google
+ColumnLimit: 0
+BinPackArguments: false
+UseTab: Never
+IndentWidth: 2
+TabWidth: 2

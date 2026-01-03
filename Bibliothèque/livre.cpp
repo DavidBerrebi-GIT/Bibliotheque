@@ -1,101 +1,98 @@
 #include "livre.h"
+
 #include <iostream>
 int Livre::compteur = 0;
 
 Livre::Livre() {
-	
-	code = compteur;
-	auteur = "";
-	titre = "";
-	editeur = "";
-	ISBN = "";
-	type_lecteur = 0;
-	etat = 0;
-	compteur++;
-	categorie = "Livre";
-
+  code = compteur;
+  auteur = "";
+  titre = "";
+  editeur = "";
+  ISBN = "";
+  type_lecteur = 0;
+  etat = DISPONIBLE;
+  compteur++;
+  categorie = "Livre";
 }
-Livre::Livre(string auteur, string titre, string editeur, string ISBN, int type_lecteur, int etat) {
-	code = compteur;
-	this->auteur = auteur;
-	this->titre = titre;
-	this->editeur = editeur;
-	this->ISBN = ISBN;
-	this->type_lecteur = type_lecteur;
-	this->etat = etat;
-	this->categorie = "Livre";
-	compteur++;
+Livre::Livre(string auteur, string titre, string editeur, string ISBN, int type_lecteur) {
+  code = compteur;
+  this->auteur = auteur;
+  this->titre = titre;
+  this->editeur = editeur;
+  this->ISBN = ISBN;
+  this->type_lecteur = type_lecteur;
+  this->etat = DISPONIBLE;
+  this->categorie = "Livre";
+  compteur++;
 }
 Livre::~Livre() {
-	compteur--;
+  compteur--;
 }
 
 void Livre::set_code(int code) {
-	this->code = code;
+  this->code = code;
 }
-int Livre::get_code(){
-	return code;
+int Livre::get_code() {
+  return code;
 }
-void Livre::set_auteur(string auteur){
-	this->auteur = auteur;
+void Livre::set_auteur(string auteur) {
+  this->auteur = auteur;
 }
-string Livre::get_auteur(){
-	return auteur;
+string Livre::get_auteur() {
+  return auteur;
 }
-void Livre::set_titre(string titre){
-	this->titre = titre;
+void Livre::set_titre(string titre) {
+  this->titre = titre;
 }
-string Livre::get_titre(){
-	return titre;
+string Livre::get_titre() {
+  return titre;
 }
-void Livre::set_editeur(string editeur){
-	this->editeur = editeur;
+void Livre::set_editeur(string editeur) {
+  this->editeur = editeur;
 }
-string Livre::get_editeur(){
-	return editeur;
+string Livre::get_editeur() {
+  return editeur;
 }
-void Livre::set_ISBN(string ISBN){
-	this->ISBN = ISBN;
+void Livre::set_ISBN(string ISBN) {
+  this->ISBN = ISBN;
 }
 string Livre::get_ISBN() {
-	return ISBN;
+  return ISBN;
 }
-void Livre::set_type_lecteur(int type_lecteur){
-	this->type_lecteur = type_lecteur;
+void Livre::set_type_lecteur(int type_lecteur) {
+  this->type_lecteur = type_lecteur;
 }
-int Livre::get_type_lecteur(){
-	return type_lecteur;
+int Livre::get_type_lecteur() {
+  return type_lecteur;
 }
-void Livre::set_etat(int etat) {
-		this->etat = etat;
+void Livre::set_etat(Etat etat) {
+  this->etat = etat;
 }
-int Livre::get_etat(){
-	return etat;
+Etat Livre::get_etat() {
+  return etat;
 }
 void Livre::set_categorie(string categorie) {
-	this->categorie = categorie;
+  this->categorie = categorie;
 }
 string Livre::get_categorie() {
-	return categorie;
+  return categorie;
 }
-
 
 void Livre::affiche() {
-	cout << "Code: " << code << endl;
-	cout << "Auteur: " << auteur << endl;
-	cout << "Titre: " << titre << endl;
-	cout << "Editeur: " << editeur << endl;
-	cout << "ISBN: " << ISBN << endl;
-	cout << "Type de lecteur: " << type_lecteur << endl;
-	cout << "Etat: " << etat << endl;
-
+  cout << "Code: " << code << endl;
+  cout << "Auteur: " << auteur << endl;
+  cout << "Titre: " << titre << endl;
+  cout << "Editeur: " << editeur << endl;
+  cout << "ISBN: " << ISBN << endl;
+  cout << "Type de lecteur: " << type_lecteur << endl;
+  cout << "Etat: " << etat << endl;
 }
 bool Livre::est_disponible() {
-	return etat == 0 or etat == 2;
+  return etat == 0;
 }
 void Livre::emprunte() {
-	etat = etat + 1;
+  etat = EMPRENTE;
 }
 void Livre::retourne() {
-	etat = etat - 1;
+  etat = DISPONIBLE;
 }

@@ -6,7 +6,9 @@ using namespace std;
 
 enum Etat { DISPONIBLE,
             EMPRENTE };
-
+enum TypeLecteur { ENFANT,
+                   ADULTE,
+                   TOUS };
 class Livre {
  protected:
   static int compteur;
@@ -15,13 +17,14 @@ class Livre {
   string titre;
   string editeur;
   string ISBN;
-  int type_lecteur;
+  TypeLecteur type_lecteur;
   Etat etat;
+  Etat proprietaire;
   string categorie;
 
  public:
   Livre();
-  Livre(string, string, string, string, int);
+  Livre(string, string, string, string, TypeLecteur);
   virtual ~Livre();
 
   void set_code(int);
@@ -34,7 +37,7 @@ class Livre {
   string get_editeur();
   void set_ISBN(string);
   string get_ISBN();
-  void set_type_lecteur(int);
+  void set_type_lecteur(TypeLecteur);
   int get_type_lecteur();
   void set_etat(Etat);
   Etat get_etat();

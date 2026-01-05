@@ -9,12 +9,13 @@ Livre::Livre() {
   titre = "";
   editeur = "";
   ISBN = "";
-  type_lecteur = 0;
+  type_lecteur = TOUS;
   etat = DISPONIBLE;
   compteur++;
   categorie = "Livre";
+
 }
-Livre::Livre(string auteur, string titre, string editeur, string ISBN, int type_lecteur) {
+Livre::Livre(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur) {
   code = compteur;
   this->auteur = auteur;
   this->titre = titre;
@@ -59,7 +60,7 @@ void Livre::set_ISBN(string ISBN) {
 string Livre::get_ISBN() {
   return ISBN;
 }
-void Livre::set_type_lecteur(int type_lecteur) {
+void Livre::set_type_lecteur(TypeLecteur type_lecteur) {
   this->type_lecteur = type_lecteur;
 }
 int Livre::get_type_lecteur() {
@@ -79,13 +80,15 @@ string Livre::get_categorie() {
 }
 
 void Livre::affiche() {
+  string etat_str = (etat == DISPONIBLE) ? "Disponible" : "Emprunté";
+  string type_lecteur_str[] = {"Enfant", "Adulte", "Tous"};
   cout << "Code: " << code << endl;
   cout << "Auteur: " << auteur << endl;
   cout << "Titre: " << titre << endl;
   cout << "Editeur: " << editeur << endl;
   cout << "ISBN: " << ISBN << endl;
-  cout << "Type de lecteur: " << type_lecteur << endl;
-  cout << "Etat: " << etat << endl;
+  cout << "Type de lecteur: " << type_lecteur_str[type_lecteur] << endl;
+  cout << "Etat: " << etat_str << endl;
 }
 bool Livre::est_disponible() {
   return etat == 0;

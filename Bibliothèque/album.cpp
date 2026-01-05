@@ -8,7 +8,7 @@ Album::Album() : Livre() {
   categorie = "Album";
 }
 
-Album::Album(string auteur, string titre, string editeur, string ISBN, int type_lecteur, bool dessin, bool photo)
+Album::Album(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur, bool dessin, bool photo)
     : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
   this->dessin = dessin;
   this->photo = photo;

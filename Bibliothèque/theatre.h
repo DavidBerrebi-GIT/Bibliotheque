@@ -7,7 +7,7 @@ class Theatre : public Livre {
 
  public:
   Theatre();
-  Theatre(string, string, string, string, int, int);
+  Theatre(string, string, string, string, TypeLecteur, int);
   ~Theatre();
   void set_siecle(int);
   int get_siecle();

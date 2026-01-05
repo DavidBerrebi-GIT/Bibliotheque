@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="adherant.cpp" />
     <ClCompile Include="album.cpp" />
     <ClCompile Include="bd.cpp" />
     <ClCompile Include="bibliotheque.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="theatre.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="adherant.h" />
     <ClInclude Include="album.h" />
     <ClInclude Include="bd.h" />
     <ClInclude Include="bibliotheque.h" />

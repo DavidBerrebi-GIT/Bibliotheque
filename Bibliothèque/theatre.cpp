@@ -5,7 +5,7 @@ Theatre::Theatre() : Livre() {
   siecle = 0;
   categorie = "Theatre";
 }
-Theatre::Theatre(string auteur, string titre, string editeur, string ISBN, int type_lecteur, int siecle)
+Theatre::Theatre(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur, int siecle)
     : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
   this->siecle = siecle;
   categorie = "Theatre";

@@ -8,7 +8,7 @@ class Recueil_poesie : public Livre {
 
  public:
   Recueil_poesie();
-  Recueil_poesie(string, string, string, string, int, bool, bool);
+  Recueil_poesie(string, string, string, string, TypeLecteur, bool, bool);
   ~Recueil_poesie();
   void set_vers(bool);
   bool get_vers();

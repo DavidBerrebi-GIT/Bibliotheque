@@ -8,7 +8,7 @@ class Album : public Livre {
 
  public:
   Album();
-  Album(string, string, string, string, int, bool, bool);
+  Album(string, string, string, string, TypeLecteur, bool, bool);
   ~Album();
   void set_dessin(bool);
   bool get_dessin();

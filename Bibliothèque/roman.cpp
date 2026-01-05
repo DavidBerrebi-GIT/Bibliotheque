@@ -5,7 +5,7 @@ Roman::Roman() : Livre() {
   genre = "";
   categorie = "Roman";
 }
-Roman::Roman(string auteur, string titre, string editeur, string ISBN, int type_lecteur, string genre)
+Roman::Roman(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur, string genre)
     : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
   this->genre = genre;
   categorie = "Roman";

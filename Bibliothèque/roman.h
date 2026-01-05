@@ -8,7 +8,7 @@ class Roman : public Livre {
 
  public:
   Roman();
-  Roman(string, string, string, string, int, string);
+  Roman(string, string, string, string, TypeLecteur, string);
   ~Roman();
   void set_genre(string);
   string get_genre();

@@ -6,7 +6,7 @@ Recueil_poesie::Recueil_poesie() : Livre() {
   prose = false;
   categorie = "Recueil de poesie";
 }
-Recueil_poesie::Recueil_poesie(string auteur, string titre, string editeur, string ISBN, int type_lecteur, bool vers, bool prose)
+Recueil_poesie::Recueil_poesie(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur, bool vers, bool prose)
     : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
   this->vers = vers;
   this->prose = prose;

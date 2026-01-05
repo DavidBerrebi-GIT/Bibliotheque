@@ -8,7 +8,7 @@ class BD : public Livre {
 
  public:
   BD();
-  BD(string, string, string, string, int, string);
+  BD(string, string, string, string, TypeLecteur, string);
   ~BD();
   void set_dessinateur(string);
   string get_dessinateur();

@@ -13,6 +13,7 @@ Livre::Livre() {
   etat = DISPONIBLE;
   compteur++;
   categorie = VIDE;
+  proprietaire = nullptr;
 
 }
 Livre::Livre(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur) {
@@ -25,6 +26,7 @@ Livre::Livre(string auteur, string titre, string editeur, string ISBN, TypeLecte
   this->etat = DISPONIBLE;
   this->categorie = VIDE;
   compteur++;
+  proprietaire = nullptr;
 }
 Livre::~Livre() {
   compteur--;
@@ -77,6 +79,12 @@ void Livre::set_categorie(Categorie categorie) {
 }
 Categorie Livre::get_categorie() {
   return categorie;
+}
+void Livre::set_proprietaire(Bibliotheque* bibliotheque) {
+  proprietaire = bibliotheque;
+}
+Bibliotheque* Livre::get_proprietaire() {
+  return proprietaire;
 }
 
 void Livre::affiche() {

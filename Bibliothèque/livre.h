@@ -1,6 +1,7 @@
 #ifndef LIVRE_H
 #define LIVRE_H
 
+#include "bibliotheque.h"
 #include <string>
 using namespace std;
 
@@ -25,7 +26,7 @@ class Livre {
   string ISBN;
   TypeLecteur type_lecteur;
   Etat etat;
-  Etat proprietaire;
+  Bibliotheque* proprietaire;
   Categorie categorie;
 
  public:
@@ -49,6 +50,8 @@ class Livre {
   Etat get_etat();
   void set_categorie(Categorie);
   Categorie get_categorie();
+  void set_proprietaire(Bibliotheque*);
+  Bibliotheque* get_proprietaire();
 
   virtual void affiche() = 0;
   bool est_disponible();

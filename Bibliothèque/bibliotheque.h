@@ -15,6 +15,7 @@ class Bibliotheque {
   int nb_livres;
   int capacite_livres;
 
+
  public:
   Bibliotheque(string, string, int);
   virtual ~Bibliotheque();
@@ -32,6 +33,7 @@ class Bibliotheque {
   void afficher_livres();
   void afficher_livres(Categorie);
 
+  bool possede_livre(string);
   bool possede_livre(int);
   void supprimer_livre(int);
   void emprunter_livre(Bibliotheque&, string);

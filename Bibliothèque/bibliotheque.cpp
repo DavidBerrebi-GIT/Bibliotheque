@@ -67,6 +67,7 @@ void Bibliotheque::afficher_livres() {
   }
   cout << endl;
 }
+
 void Bibliotheque::afficher_livres(Categorie categorie) {
   int compteur = 0;
   for (int i = 0; i < nb_livres; i++) {
@@ -86,6 +87,14 @@ void Bibliotheque::afficher_livres(Categorie categorie) {
       cout << "------------------------" << endl;
     }
   }
+}
+bool Bibliotheque::possede_livre(string ISBN) {
+  for (int i = 0; i < nb_livres; i++) {
+    if (liste_livres[i]->get_ISBN() == ISBN) {
+      return true;
+    }
+  }
+  return false;
 }
 
 bool Bibliotheque::possede_livre(int code) {

@@ -35,7 +35,7 @@ int main() {
   cout << "Premier affichage :" << endl;
   biblio.afficher_livres();
   cout << "deuxieme affichage : romans:" << endl;
-  biblio.afficher_categorie("Roman");
+  biblio.afficher_livres(ROMAN);
 
   biblio.supprimer_livre(roman1.get_code());
   cout << "Troisième affichage :  apres suppression" << endl;

@@ -5,14 +5,14 @@
 Album::Album() : Livre() {
   dessin = false;
   photo = false;
-  categorie = "Album";
+  categorie = ALBUM;
 }
 
 Album::Album(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur, bool dessin, bool photo)
     : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
   this->dessin = dessin;
   this->photo = photo;
-  categorie = "Album";
+  categorie = ALBUM;
 }
 Album::~Album() {
   compteur--;

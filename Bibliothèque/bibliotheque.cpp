@@ -67,7 +67,7 @@ void Bibliotheque::afficher_livres() {
   }
   cout << endl;
 }
-void Bibliotheque::afficher_categorie(string categorie) {
+void Bibliotheque::afficher_livres(Categorie categorie) {
   int compteur = 0;
   for (int i = 0; i < nb_livres; i++) {
     if (liste_livres[i]->get_categorie() == categorie) {

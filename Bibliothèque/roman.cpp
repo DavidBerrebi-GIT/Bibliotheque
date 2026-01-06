@@ -3,12 +3,12 @@
 #include <iostream>
 Roman::Roman() : Livre() {
   genre = "";
-  categorie = "Roman";
+  categorie = ROMAN;
 }
 Roman::Roman(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur, string genre)
     : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
   this->genre = genre;
-  categorie = "Roman";
+  categorie = ROMAN;
 }
 Roman::~Roman() {
   compteur--;

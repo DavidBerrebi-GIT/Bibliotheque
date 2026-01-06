@@ -4,12 +4,12 @@
 
 BD::BD() : Livre() {
   dessinateur = "";
-  categorie = "BD";
+  categorie = BANDEDESSINE;
 }
 BD::BD(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur, string dessinateur)
     : Livre(auteur, titre, editeur, ISBN, type_lecteur) {
   this->dessinateur = dessinateur;
-  categorie = "BD";
+  categorie = BANDEDESSINE;
 }
 BD::~BD() {
   compteur--;

@@ -9,6 +9,12 @@ enum Etat { DISPONIBLE,
 enum TypeLecteur { ENFANT,
                    ADULTE,
                    TOUS };
+enum Categorie { VIDE,
+                 BANDEDESSINE,
+                 RECUEILPOESIE,
+                 ROMAN,
+                 PIECETHEATRE,
+                 ALBUM };
 class Livre {
  protected:
   static int compteur;
@@ -20,7 +26,7 @@ class Livre {
   TypeLecteur type_lecteur;
   Etat etat;
   Etat proprietaire;
-  string categorie;
+  Categorie categorie;
 
  public:
   Livre();
@@ -41,8 +47,8 @@ class Livre {
   int get_type_lecteur();
   void set_etat(Etat);
   Etat get_etat();
-  void set_categorie(string);
-  string get_categorie();
+  void set_categorie(Categorie);
+  Categorie get_categorie();
 
   virtual void affiche() = 0;
   bool est_disponible();

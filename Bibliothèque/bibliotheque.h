@@ -30,7 +30,7 @@ class Bibliotheque {
 
   void ajouter_livre(Livre*);
   void afficher_livres();
-  void afficher_categorie(string);
+  void afficher_livres(Categorie);
 
   bool possede_livre(int);
   void supprimer_livre(int);

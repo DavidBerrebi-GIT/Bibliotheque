@@ -21,5 +21,5 @@ int Theatre::get_siecle() {
 }
 void Theatre::affiche() {
   Livre::affiche();
-  std::cout << "Siècle: " << siecle << std::endl;
+  std::cout << "Siecle: " << siecle << std::endl;
 }

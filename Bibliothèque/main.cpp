@@ -43,7 +43,7 @@ int main() {
   biblio.afficher_livres(ROMAN);
 
   biblio.supprimer_livre(roman1.get_code());
-  cout << "Troisième affichage :  apres suppression" << endl;
+  cout << "Troisieme affichage :  apres suppression" << endl;
   biblio.afficher_livres();
 
   cout << "Affichage avant emprunt " << endl;
@@ -52,7 +52,7 @@ int main() {
   biblio.emprunter_livre(biblio2, bd2.get_ISBN());
   cout << "------------------------\n"
        << endl;
-  cout << "Affichage après emprunt du livre BD2 de la bibliotheque secondaire:" << endl;
+  cout << "Affichage apres emprunt du livre BD2 de la bibliotheque secondaire:" << endl;
 
   cout << "Nb livres dans biblio principale: " << biblio.get_nblivres() << endl;
   cout << "Nb livres dans biblio secondaire: " << biblio2.get_nblivres() << endl;
@@ -83,4 +83,54 @@ int main() {
   Adherant adherant2 = Adherant("Martin", "Sophie", "321 Rue Adherant2", 2, &biblio, 3);
   adherant2.emprunter_livre(bd1.get_code());
   cout << adherant2.get_nb_livres_empruntes() << endl;
+
+  cout << "Bienvenue a la bibliotheque !" << endl;
+  Adherant* current_adherant = nullptr;
+  int adherant_choice;
+  while (true) {
+    cout << "Veuillez choisir votre numero d'adherent (1 ou 2), ou 0 pour quitter: ";
+    cin >> adherant_choice;
+    if (adherant_choice == 0) {
+      break;
+    } else if (adherant_choice == 1) {
+      current_adherant = &adherant1;
+    } else if (adherant_choice == 2) {
+      current_adherant = &adherant2;
+    } else {
+      cout << "Numero d'adherent invalide. Veuillez reessayer." << endl;
+      continue;
+    }
+    int action_choice;
+    while (true) {
+      cout << "\nQue souhaitez-vous faire ?" << endl;
+      cout << "1. Voir la liste des livres disponibles" << endl;
+      cout << "2. Emprunter un livre" << endl;
+      cout << "3. Retourner un livre" << endl;
+      cout << "4. Voir mes livres empruntes" << endl;
+      cout << "5. Se deconnecter" << endl;
+      cout << "Votre choix: ";
+      cin >> action_choice;
+      if (action_choice == 1) {
+        current_adherant->get_bibliotheque()->afficher_livres();
+      } else if (action_choice == 2) {
+        int code_to_borrow;
+        cout << "Entrez le code du livre a emprunter: ";
+        cin >> code_to_borrow;
+        current_adherant->emprunter_livre(code_to_borrow);
+
+      } else if (action_choice == 3) {
+        int code_to_return;
+        cout << "Entrez le code du livre a retourner: ";
+        cin >> code_to_return;
+        current_adherant->retourner_livre(code_to_return);
+      } else if (action_choice == 4) {
+        current_adherant->afficher_livres_empruntes();
+      } else if (action_choice == 5) {
+        cout << "Déconnexion..." << endl;
+        break;
+      } else {
+        cout << "Choix invalide. Veuillez réessayer." << endl;
+      }
+    }
+  }
 }

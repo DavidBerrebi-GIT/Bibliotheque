@@ -79,3 +79,10 @@ void Adherant::retourner_livre(int code) {
   }
   std::cout << "Le livre n'a pas ete trouve parmi les emprunts." << std::endl;
 }
+
+void Adherant::afficher_livres_empruntes() {
+  std::cout << "Livres empruntes par " << nom << " " << prenom << " :" << std::endl;
+  for (int i = 0; i < nb_livres_empruntes; i++) {
+    livres_empruntes[i]->affiche();
+  }
+}

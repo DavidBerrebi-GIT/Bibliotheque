@@ -50,6 +50,9 @@ void Bibliotheque::ajouter_livre(Livre* livre) {
     delete[] liste_livres;
     liste_livres = nouvelle_liste;
   }
+  if (livre->get_proprietaire() == nullptr) {
+    livre->set_proprietaire(this);
+  }
   liste_livres[nb_livres] = livre;
   nb_livres++;
 }
@@ -142,4 +145,13 @@ Livre* Bibliotheque::emprunt_adherant(int code) {
     }
   }
   return nullptr;
+}
+
+void Bibliotheque::retourner_livres() {
+  for (int i = 0; i < nb_livres; i++) {
+    if (liste_livres[i]->get_proprietaire() != this && liste_livres[i]->est_disponible()) {
+      cout << "Retour du livre: " << liste_livres[i]->get_titre() << endl;
+      supprimer_livre(liste_livres[i]->get_code());
+    }
+  }
 }

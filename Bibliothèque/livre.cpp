@@ -14,7 +14,6 @@ Livre::Livre() {
   compteur++;
   categorie = VIDE;
   proprietaire = nullptr;
-
 }
 Livre::Livre(string auteur, string titre, string editeur, string ISBN, TypeLecteur type_lecteur) {
   code = compteur;

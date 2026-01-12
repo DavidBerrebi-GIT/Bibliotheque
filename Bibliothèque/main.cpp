@@ -9,6 +9,10 @@
 #include "theatre.h"
 
 int main() {
+  /*
+   * le main sert a tester les differentes fonctionnalites des classes
+   */
+
   Bibliotheque biblio = Bibliotheque("Bibliotheque Centrale", "123 Rue Principale", 1);
 
   BD bd1 = BD("AuteurBD1", "TitreBD1", "EditeurBD1", "ISBNBD1", ENFANT, "Dessinateur1");
@@ -56,11 +60,27 @@ int main() {
   biblio.afficher_livres();
   biblio2.afficher_livres();
 
-  Adherant adherant1 = Adherant("Dupont", "Jean", "789 Rue Adherant", 1, &biblio, 3);
+  Adherant adherant1 = Adherant("Dupont", "Jean", "789 Rue Adherant", 1, &biblio, 2);
 
-  adherant1.emprunter_livre(album1.get_code());
+  adherant1.emprunter_livre(bd2.get_code());
   cout << adherant1.get_nb_livres_empruntes() << endl;
 
-  adherant1.retourner_livre(album1.get_code());
+  adherant1.retourner_livre(bd2.get_code());
   cout << adherant1.get_nb_livres_empruntes() << endl;
+
+  biblio.retourner_livres();
+
+  adherant1.emprunter_livre(bd2.get_code());
+  cout << adherant1.get_nb_livres_empruntes() << endl;
+
+  adherant1.retourner_livre(bd2.get_code());
+  cout << adherant1.get_nb_livres_empruntes() << endl;
+
+  adherant1.emprunter_livre(bd1.get_code());
+  adherant1.emprunter_livre(theatre1.get_code());
+  adherant1.emprunter_livre(recueil1.get_code());
+
+  Adherant adherant2 = Adherant("Martin", "Sophie", "321 Rue Adherant2", 2, &biblio, 3);
+  adherant2.emprunter_livre(bd1.get_code());
+  cout << adherant2.get_nb_livres_empruntes() << endl;
 }

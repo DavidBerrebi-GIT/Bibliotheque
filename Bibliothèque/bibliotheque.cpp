@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#include "livre.h"
-
 Bibliotheque::Bibliotheque(string nom, string adresse, int code) {
   this->nom = nom;
   this->adresse = adresse;

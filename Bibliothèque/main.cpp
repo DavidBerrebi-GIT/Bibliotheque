@@ -1,12 +1,12 @@
 #include <iostream>
 
 #include "adherant.h"
-#include "album.h"
-#include "bd.h"
 #include "bibliotheque.h"
-#include "recueil_poesie.h"
-#include "roman.h"
-#include "theatre.h"
+#include "livres/album.h"
+#include "livres/bd.h"
+#include "livres/recueil_poesie.h"
+#include "livres/roman.h"
+#include "livres/theatre.h"
 
 int main() {
   /*

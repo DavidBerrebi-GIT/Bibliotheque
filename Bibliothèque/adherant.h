@@ -4,7 +4,7 @@
 #include <string>
 
 #include "bibliotheque.h"
-#include "livre.h"
+
 using namespace std;
 class Adherant {
  private:

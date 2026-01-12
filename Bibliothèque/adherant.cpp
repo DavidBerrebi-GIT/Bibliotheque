@@ -64,3 +64,18 @@ void Adherant::emprunter_livre(int code) {
     std::cout << "Livre emprunte avec succes." << std::endl;
   }
 }
+
+void Adherant::retourner_livre(int code) {
+  for (int i = 0; i < nb_livres_empruntes; i++) {
+    if (livres_empruntes[i]->get_code() == code) {
+      livres_empruntes[i]->retourne();
+      for (int j = i; j < nb_livres_empruntes - 1; j++) {
+        livres_empruntes[j] = livres_empruntes[j + 1];
+      }
+      nb_livres_empruntes--;
+      std::cout << "Livre retourne avec succes." << std::endl;
+      return;
+    }
+  }
+  std::cout << "Le livre n'a pas ete trouve parmi les emprunts." << std::endl;
+}

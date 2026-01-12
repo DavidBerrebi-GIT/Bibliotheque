@@ -15,7 +15,6 @@ class Bibliotheque {
   int nb_livres;
   int capacite_livres;
 
-
  public:
   Bibliotheque(string, string, int);
   virtual ~Bibliotheque();

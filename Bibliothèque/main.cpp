@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "adherant.h"
 #include "album.h"
 #include "bd.h"
 #include "bibliotheque.h"
@@ -54,4 +55,12 @@ int main() {
 
   biblio.afficher_livres();
   biblio2.afficher_livres();
+
+  Adherant adherant1 = Adherant("Dupont", "Jean", "789 Rue Adherant", 1, &biblio, 3);
+
+  adherant1.emprunter_livre(album1.get_code());
+  cout << adherant1.get_nb_livres_empruntes() << endl;
+
+  adherant1.retourner_livre(album1.get_code());
+  cout << adherant1.get_nb_livres_empruntes() << endl;
 }

@@ -1,8 +1,10 @@
 #ifndef LIVRE_H
 #define LIVRE_H
 
-#include "bibliotheque.h"
 #include <string>
+
+class Bibliotheque;
+
 using namespace std;
 
 enum Etat { DISPONIBLE,

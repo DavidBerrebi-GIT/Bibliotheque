@@ -38,6 +38,14 @@ int Bibliotheque::get_capacite_livres() {
   return capacite_livres;
 }
 
+void Bibliotheque::afficher() {
+  cout << "Bibliotheque: " << nom << endl;
+  cout << "Adresse: " << adresse << endl;
+  cout << "Code : " << code << endl;
+
+  afficher_livres();
+}
+
 void Bibliotheque::ajouter_livre(Livre* livre) {
   if (nb_livres >= capacite_livres) {
     capacite_livres *= 2;

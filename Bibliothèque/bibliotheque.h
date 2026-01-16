@@ -29,6 +29,8 @@ class Bibliotheque {
   int get_nblivres();
   int get_capacite_livres();
 
+  void afficher();
+
   void ajouter_livre(Livre*);
   void afficher_livres();
   void afficher_livres(Categorie);

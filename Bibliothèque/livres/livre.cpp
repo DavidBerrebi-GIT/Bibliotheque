@@ -87,7 +87,7 @@ Bibliotheque* Livre::get_proprietaire() {
 }
 
 void Livre::affiche() {
-  string etat_str = (etat == DISPONIBLE) ? "Disponible" : "Emprunté";
+  string etat_str = (etat == DISPONIBLE) ? "Disponible" : "Emprunte";
   string type_lecteur_str[] = {"Enfant", "Adulte", "Tous"};
   cout << "Code: " << code << endl;
   cout << "Auteur: " << auteur << endl;

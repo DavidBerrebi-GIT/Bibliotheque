@@ -58,11 +58,13 @@ void Adherant::emprunter_livre(int code) {
     return;
   }
   Livre* livre_emprunte = bibliotheque->emprunt_adherant(code);
-  if (livre_emprunte != nullptr) {
-    livres_empruntes[nb_livres_empruntes] = livre_emprunte;
-    nb_livres_empruntes++;
-    std::cout << "Livre emprunte avec succes." << std::endl;
+  if (livre_emprunte == nullptr) {
+    std::cout << "Le livre n'est pas disponible pour emprunt." << std::endl;
+    return;
   }
+  livres_empruntes[nb_livres_empruntes] = livre_emprunte;
+  nb_livres_empruntes++;
+  std::cout << "Livre emprunte avec succes." << std::endl;
 }
 
 void Adherant::retourner_livre(int code) {

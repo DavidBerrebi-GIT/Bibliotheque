@@ -37,54 +37,16 @@ int main() {
   biblio2.ajouter_livre(&roman2);
   biblio2.ajouter_livre(&roman3);
 
-  cout << "Premier affichage :" << endl;
-  biblio.afficher_livres();
-  cout << "deuxieme affichage : romans:" << endl;
-  biblio.afficher_livres(ROMAN);
-
-  biblio.supprimer_livre(roman1.get_code());
-  cout << "Troisieme affichage :  apres suppression" << endl;
-  biblio.afficher_livres();
-
-  cout << "Affichage avant emprunt " << endl;
-  biblio.afficher_livres();
-  biblio2.afficher_livres();
-  biblio.emprunter_livre(biblio2, bd2.get_ISBN());
-  cout << "------------------------\n"
-       << endl;
-  cout << "Affichage apres emprunt du livre BD2 de la bibliotheque secondaire:" << endl;
-
-  cout << "Nb livres dans biblio principale: " << biblio.get_nblivres() << endl;
-  cout << "Nb livres dans biblio secondaire: " << biblio2.get_nblivres() << endl;
-
-  biblio.afficher_livres();
-  biblio2.afficher_livres();
-
   Adherant adherant1 = Adherant("Dupont", "Jean", "789 Rue Adherant", 1, &biblio, 2);
-
-  adherant1.emprunter_livre(bd2.get_code());
-  cout << adherant1.get_nb_livres_empruntes() << endl;
-
-  adherant1.retourner_livre(bd2.get_code());
-  cout << adherant1.get_nb_livres_empruntes() << endl;
-
-  biblio.retourner_livres();
-
-  adherant1.emprunter_livre(bd2.get_code());
-  cout << adherant1.get_nb_livres_empruntes() << endl;
-
-  adherant1.retourner_livre(bd2.get_code());
-  cout << adherant1.get_nb_livres_empruntes() << endl;
 
   adherant1.emprunter_livre(bd1.get_code());
   adherant1.emprunter_livre(theatre1.get_code());
-  adherant1.emprunter_livre(recueil1.get_code());
 
   Adherant adherant2 = Adherant("Martin", "Sophie", "321 Rue Adherant2", 2, &biblio, 3);
-  adherant2.emprunter_livre(bd1.get_code());
-  cout << adherant2.get_nb_livres_empruntes() << endl;
 
-  cout << "Bienvenue a la bibliotheque !" << endl;
+  cout << endl
+       << endl
+       << "Bienvenue a la bibliotheque !" << endl;
   Adherant* current_adherant = nullptr;
   int adherant_choice;
   while (true) {
@@ -110,6 +72,7 @@ int main() {
       cout << "5. Se deconnecter" << endl;
       cout << "Votre choix: ";
       cin >> action_choice;
+      cout << endl;
       if (action_choice == 1) {
         current_adherant->get_bibliotheque()->afficher_livres();
       } else if (action_choice == 2) {

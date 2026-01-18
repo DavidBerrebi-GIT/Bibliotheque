@@ -133,7 +133,7 @@ void Bibliotheque::supprimer_livre(int code) {
 }
 void Bibliotheque::emprunter_livre(Bibliotheque& autre, string ISBN) {
   for (int i = 0; i < autre.nb_livres; i++) {
-    if (autre.liste_livres[i]->get_ISBN() == ISBN) {
+    if (autre.liste_livres[i]->get_ISBN() == ISBN && autre.liste_livres[i]->est_disponible() ) {
       Livre* livre_emprunte = autre.liste_livres[i];
       // peut etre dire que le livre est emprunte a une autre bibliotheque
       ajouter_livre(livre_emprunte);
